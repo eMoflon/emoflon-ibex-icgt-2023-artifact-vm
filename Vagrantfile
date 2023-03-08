@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
     config.ssh.password = 'vagrant'
     config.ssh.insert_key = false
 
-    config.vm.provision "file", source: "./org.emoflon.ibex.tgg.ide.updatesite.zip", destination: "updatesite.zip"
+    config.vm.provision "file", source: "./resources/updatesite.zip", destination: "updatesite.zip"
 
     # TODO: Remove me:
     config.vm.provision "file", source: "./eclipse-workspace.zip", destination: "eclipse-workspace.zip"

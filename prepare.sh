@@ -2,6 +2,12 @@
 
 set -e
 
+# Check if emoflon.box was already created
+if [[ -f "./emoflon.box" ]]; then
+	echo "emoflon.box was already created, skipping preparation."
+	exit 0
+fi
+
 # concatenate ZIP archive
 cat *-vm.z* > cat.zip
 

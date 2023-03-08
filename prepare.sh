@@ -22,4 +22,3 @@ vagrant package --base $id --output emoflon.box
 
 # Add box as local Vagrant box
 vagrant box add emoflon.box --name emoflon
-

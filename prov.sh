@@ -48,16 +48,14 @@ rm -f $ECLIPSE_ARCHIVE.zip
 # Install eMoflon::IBeX from custom updatesite to included Eclipse (VM)
 # TODO
 
-# Get example projects from PSF
-# TODO
-mkdir -p /home/vagrant/git && cd /home/vagrant/git
-
-# TODO
-#git clone https://github.com/Echtzeitsysteme/gips-seams-2023-exemplar.git
+# Get example projects from ZIP
+mkdir -p /home/vagrant/emoflon-projects
+unzip workspace.zip -d /home/vagrant/emoflon-projects
+rm -f workspace.zip
 
 # Import example projects into default workspace
-#cd /home/vagrant/eclipse-apps-ci/eclipse
-#./eclipse -noSplash -consoleLog -data /home/vagrant/eclipse-workspace -application com.seeq.eclipse.importprojects.headlessimport -importProject /home/vagrant/git/gips-seams-2023-exemplar/
+cd /home/vagrant/eclipse-apps-ci/eclipse
+./eclipse -noSplash -consoleLog -data /home/vagrant/eclipse-workspace -application com.seeq.eclipse.importprojects.headlessimport -importProject /home/vagrant/emoflon-projects/
 
 # Eclipse CI clean up
 #cd /home/vagrant

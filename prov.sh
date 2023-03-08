@@ -49,6 +49,7 @@ rm -f $ECLIPSE_ARCHIVE.zip
 # TODO
 
 # Get example projects from ZIP
+cd /home/vagrant
 mkdir -p /home/vagrant/emoflon-projects
 unzip workspace.zip -d /home/vagrant/emoflon-projects
 rm -f workspace.zip

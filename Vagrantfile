@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
     config.vm.box = "emoflon"
-    config.vm.define 'ubuntu'
+    config.vm.define 'emoflon'
     config.vm.provider :virtualbox do |vb|
         vb.name = "emoflon-hosr"
         vb.memory = 8192
@@ -14,5 +14,9 @@ Vagrant.configure("2") do |config|
     config.ssh.username = 'vagrant'
     config.ssh.password = 'vagrant'
     config.ssh.insert_key = false
-end
 
+    config.vm.provision "file", source: "./org.emoflon.ibex.tgg.ide.updatesite.zip", destination: "updatesite.zip"
+
+    # TODO: Remove me:
+    config.vm.provision "file", source: "./eclipse-workspace.zip", destination: "eclipse-workspace.zip"
+end

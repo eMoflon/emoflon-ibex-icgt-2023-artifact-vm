@@ -18,5 +18,5 @@ Vagrant.configure("2") do |config|
     config.vm.provision "file", source: "./resources/updatesite.zip", destination: "updatesite.zip"
 
     # TODO: Remove me:
-    config.vm.provision "file", source: "./eclipse-workspace.zip", destination: "eclipse-workspace.zip"
+    config.vm.provision "file", source: "./resources/workspace.zip", destination: "workspace.zip"
 end

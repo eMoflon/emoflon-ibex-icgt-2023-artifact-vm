@@ -1,8 +1,8 @@
 Vagrant.configure("2") do |config|
-    config.vm.box = "gips"
+    config.vm.box = "emoflon"
     config.vm.define 'ubuntu'
     config.vm.provider :virtualbox do |vb|
-        vb.name = "gips-seams"
+        vb.name = "emoflon-hosr"
         vb.memory = 8192
         vb.cpus = 2
     end
@@ -15,3 +15,4 @@ Vagrant.configure("2") do |config|
     config.ssh.password = 'vagrant'
     config.ssh.insert_key = false
 end
+

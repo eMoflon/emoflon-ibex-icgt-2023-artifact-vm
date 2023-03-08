@@ -4,7 +4,7 @@
 # Config
 #
 
-ECLIPSE_ARCHIVE=eclipse-emoflon-linux-dev-ci
+ECLIPSE_ARCHIVE=eclipse-emoflon-linux-user-ci
 EMOFLON_RELEASE=v1.0.0.202210111747-r4
 EMOFLON_SRC_URL="https://github.com/eMoflon/emoflon-ibex-eclipse-build/releases/download/$EMOFLON_RELEASE/$ECLIPSE_ARCHIVE.zip"
 
@@ -45,7 +45,7 @@ fi
 unzip -qq -o $ECLIPSE_ARCHIVE.zip
 rm -f $ECLIPSE_ARCHIVE.zip
 
-# Install eMoflon::IBeX from custom updatesite
+# Install eMoflon::IBeX from custom updatesite to included Eclipse (VM)
 # TODO
 
 # Get example projects from PSF

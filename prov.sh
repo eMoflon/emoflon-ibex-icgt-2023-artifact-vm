@@ -46,7 +46,15 @@ unzip -qq -o $ECLIPSE_ARCHIVE.zip
 rm -f $ECLIPSE_ARCHIVE.zip
 
 # Install eMoflon::IBeX from custom updatesite to included Eclipse (VM)
-# TODO
+cd /home/vagrant
+unzip updatesite.zip -d /home/vagrant/updatesite
+cd /home/vagrant/eclipse-apps/eclipse
+./eclipse -noSplash -consoleLog -application org.eclipse.equinox.p2.director -repository file:///home/vagrant/updatesite/ -uninstallIU org.emoflon.ibex.ide.democles.feature.feature.group,org.emoflon.ibex.ide.feature.feature.group,org.emoflon.ibex.ide.hipe.feature.feature.group,org.emoflon.ibex.tgg.editor.feature.feature.group,org.moflon.core.feature.feature.group
+./eclipse -noSplash -consoleLog -application org.eclipse.equinox.p2.director -repository file:///home/vagrant/updatesite/ -installIU org.emoflon.ibex.ide.democles.feature.feature.group,org.emoflon.ibex.ide.feature.feature.group,org.emoflon.ibex.ide.hipe.feature.feature.group,org.emoflon.ibex.tgg.editor.feature.feature.group,org.moflon.core.feature.feature.group
+
+# Updatesite clean up
+cd /home/vagrant
+rm -rf /home/vagrant/updatesite /home/vagrant/updatesite.zip
 
 # Get example projects from ZIP
 cd /home/vagrant
@@ -59,7 +67,7 @@ cd /home/vagrant/eclipse-apps-ci/eclipse
 ./eclipse -noSplash -consoleLog -data /home/vagrant/eclipse-workspace -application com.seeq.eclipse.importprojects.headlessimport -importProject /home/vagrant/emoflon-projects/
 
 # Eclipse CI clean up
-#cd /home/vagrant
-#rm -rf /home/vagrant/eclipse-apps-ci
+cd /home/vagrant
+rm -rf /home/vagrant/eclipse-apps-ci
 
 log "Finished provisioning."

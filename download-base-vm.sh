@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 #
 # Config
 #
@@ -8,6 +9,11 @@ EMOFLON_BASE_VM_RELEASE=v1.0.0.202210111747-r4
 
 set -e
 START_PWD=$PWD
+
+# Displays the given input including "=> " on the console.
+log () {
+	echo "=> $1"
+}
 
 if [[ ! -f "./emoflon-vm.zip" ]]; then
 	log "Downloading eMoflon::IBeX Eclipse archive: $EMOFLON_BASE_VM_RELEASE"

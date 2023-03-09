@@ -10,7 +10,7 @@ log () {
 # Check if required tools are installed
 log "Checking required tools."
 apt-get update
-apt-get install -yq tmux
+apt-get install -yq tmux htop iotop iftop ncdu
 
 # wget
 if ! command -v wget &> /dev/null

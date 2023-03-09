@@ -26,6 +26,20 @@ then
     apt-get install -yq unzip
 fi
 
+# tar
+if ! command -v tar &> /dev/null
+then
+    log "Binary tar could not be found. Installing it."
+    apt-get install -yq tar
+fi
+
+# sed
+if ! command -v sed &> /dev/null
+then
+    log "Binary sed could not be found. Installing it."
+    apt-get install -yq sed
+fi
+
 # VirtualBox
 if ! command -v vboxmanage &> /dev/null
 then

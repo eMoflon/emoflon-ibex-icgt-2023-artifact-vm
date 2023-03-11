@@ -28,7 +28,6 @@ echo "Starting vagrant box preparation script."
 echo "Start vagrant provisioning."
 vagrant up
 vagrant halt
-#vboxmanage export emoflon-hosr -o emoflon.ova
 vboxmanage export emoflon-hosr -o emoflon.ovf
 
 # Apply "fix" for missing nvram file + remote display

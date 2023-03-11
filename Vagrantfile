@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision "file", source: "./resources/updatesite.zip", destination: "updatesite.zip"
     config.vm.provision "file", source: "./resources/workspace.zip", destination: "workspace.zip"
     config.vm.provision "file", source: "./resources/content-onto-desktop/ICGT23-Setup.pdf", destination: "Desktop/ICGT23-Setup.pdf"
-    config.vm.provision "shell", inline: "mkdir -p /home/vagrant/Desktop/paper-eval-results"
+    config.vm.provision "shell", inline: "mkdir -p /home/vagrant/Desktop/paper-eval-results && chown -R vagrant:vagrant /home/vagrant/Desktop/paper-eval-results"
     config.vm.provision "file", source: "./resources/content-onto-desktop/paper-eval-results/Benchmark_HO-SC-Horizontal.txt", destination: "Desktop/paper-eval-results/Benchmark_HO-SC-Horizontal.txt"
     config.vm.provision "file", source: "./resources/content-onto-desktop/paper-eval-results/Benchmark_HO-SC-Vertical.txt", destination: "Desktop/paper-eval-results/Benchmark_HO-SC-Vertical.txt"
 

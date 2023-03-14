@@ -18,6 +18,6 @@ log () {
 if [[ ! -f "./emoflon-vm.zip" ]]; then
 	log "Downloading eMoflon::IBeX Eclipse archive: $EMOFLON_BASE_VM_RELEASE"
 	wget -q https://github.com/eMoflon/emoflon-ibex-vm/releases/download/$EMOFLON_BASE_VM_RELEASE/emoflon-vm.zip
-    wget -q https://github.com/eMoflon/emoflon-ibex-vm/releases/download/$EMOFLON_BASE_VM_RELEASE/emoflon-vm.z01
-    wget -q https://github.com/eMoflon/emoflon-ibex-vm/releases/download/$EMOFLON_BASE_VM_RELEASE/emoflon-vm.z02
+	wget -q https://github.com/eMoflon/emoflon-ibex-vm/releases/download/$EMOFLON_BASE_VM_RELEASE/emoflon-vm.z01
+	wget -q https://github.com/eMoflon/emoflon-ibex-vm/releases/download/$EMOFLON_BASE_VM_RELEASE/emoflon-vm.z02
 fi

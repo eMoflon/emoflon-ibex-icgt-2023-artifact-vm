@@ -1,4 +1,4 @@
-# eMoflon::IBeX Higher Order Shurtcut Rules VM
+# eMoflon::IBeX VM - ICGT 2023 Artifact Evaluation
 
 This repository holds the scripts/resources to build the eMoflon VM for the ICGT23 Artefact Evaluation for:  
 **"Advanced Consistency Restoration with Higher-Order Short-Cut Rules"**  

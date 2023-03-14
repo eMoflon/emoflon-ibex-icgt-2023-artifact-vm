@@ -1,27 +1,39 @@
 # eMoflon::IBeX Higher Order Shurtcut Rules VM
 
-TODO!
-
-<!--
-# GIPS SEAMS 2023 Artifact VM
-
-[**GIPS**](https://gips.dev) is an open-source framework for **G**raph-Based **I**LP **P**roblem **S**pecification.
-
-This repository holds the exemplar of our **SEAMS 2023 Artifact** submission together with the **GIPS** framework as a runnable virtual machine (VM) artifact.
-
-[![VM Provisioning](https://github.com/Echtzeitsysteme/gips-seams-2023-artifact-vm/actions/workflows/vagrant-up.yml/badge.svg?branch=main)](https://github.com/Echtzeitsysteme/gips-seams-2023-artifact-vm/actions/workflows/vagrant-up.yml)
-[![Build GIPS SEAMS Tutorial PDF](https://github.com/Echtzeitsysteme/gips-seams-2023-artifact-vm/actions/workflows/tutorial.yml/badge.svg?branch=main)](https://github.com/Echtzeitsysteme/gips-seams-2023-artifact-vm/actions/workflows/tutorial.yml)
-
-The source code of the exemplar can be found in [this repository](https://github.com/Echtzeitsysteme/gips-seams-2023-exemplar).
+This repository holds the scripts/resources to build the eMoflon VM for the ICGT23 Artefact Evaluation for:  
+**"Advanced Consistency Restoration with Higher-Order Short-Cut Rules"**  
+by Lars Fritsche, Jens Kosiol, Adrian Möller and Andy Schürr
 
 
 ## Setup
 
-- Download the latest VM build from the [releases section](https://github.com/Echtzeitsysteme/gips-seams-2023-artifact-vm/releases/latest).
-    - The VM builds are split into three archive parts due to GitHub platform limitations. You have to download all three of them.
-- Download the latest setup step-by-step guide (PDF) from the [releases section](https://github.com/Echtzeitsysteme/gips-seams-2023-artifact-vm/releases/latest).
-- All further steps are explained in the PDF file.
--->
+You have to use a GNU/Linux OS, for example [Debian 11](https://www.debian.org/releases/bullseye/). (Running this on macOS and Windows might be possible, but it isn't tested.)
+- Clone this repository.
+- Install all dependencies/tools (`wget`, `unzip`, `tar`, `sed`, `virtualbox-7.0`, and `vagrant`) by running the following command:
+```
+$ ./setup-runner.sh
+```
+- Build the VM image by running:  
+```
+$ ./build-vm.sh
+```
+- The image will be packed/exported as `emoflon.ova` in the repository.
+
+Please notice:
+- The system you use to provision the VM image needs at least a few GBs of free RAM. Use >8GB RAM and it should be fine.
+- If you use a VM itself to provision the VM image make sure that it supports nested virtualization.
+- If you want to update, for example, the PDF file or the workspace projects, update the files placed in [`resources`](./resources/).
+
+
+## Scripts/Config files
+
+The following scripts and config files are part of this repository:
+- [`build-vm.sh`](./build-vm.sh): Wrapper script that builds the complete VM image.
+- [`download-base-vm.sh`](./download-base-vm.sh): Downloads the [base eMoflon::IBeX VM image](https://github.com/eMoflon/emoflon-ibex-vm/releases) from the GitHub.
+- [`prepare.sh`](./prepare.sh): Extracts the downloaded base VM image and adds it as Vagrant box.
+- [`prov.sh`](./prov.sh): Provisioning script that will be used to configure the VM image, e.g., to add projects to the default Eclipse workspace.
+- [`setup-runner.sh`](./setup-runner.sh): Installation script to install all dependencies/tools on the runner's system.
+- [`Vagrantfile`](./Vagrantfile): Vagrant configuration for the VM provisioning.
 
 
 ## License

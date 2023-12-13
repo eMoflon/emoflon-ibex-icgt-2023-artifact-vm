@@ -5,7 +5,7 @@
 # Config
 #
 
-EMOFLON_BASE_VM_RELEASE=v1.0.0.202210111747-r4
+EMOFLON_BASE_VM_RELEASE=v1.0.0.202312051648
 
 set -e
 START_PWD=$PWD
@@ -16,7 +16,7 @@ log () {
 }
 
 if [[ ! -f "./emoflon-vm.zip" ]]; then
-	log "Downloading eMoflon::IBeX Eclipse archive: $EMOFLON_BASE_VM_RELEASE"
+	log "Downloading eMoflon::IBeX VM archive: $EMOFLON_BASE_VM_RELEASE"
 	wget -q https://github.com/eMoflon/emoflon-ibex-vm/releases/download/$EMOFLON_BASE_VM_RELEASE/emoflon-vm.zip
 	wget -q https://github.com/eMoflon/emoflon-ibex-vm/releases/download/$EMOFLON_BASE_VM_RELEASE/emoflon-vm.z01
 	wget -q https://github.com/eMoflon/emoflon-ibex-vm/releases/download/$EMOFLON_BASE_VM_RELEASE/emoflon-vm.z02

@@ -5,7 +5,7 @@
 #
 
 ECLIPSE_ARCHIVE=eclipse-emoflon-linux-user-ci
-EMOFLON_RELEASE=v1.0.0.202210111747-r4
+EMOFLON_RELEASE=v1.0.0.202312051648
 EMOFLON_SRC_URL="https://github.com/eMoflon/emoflon-ibex-eclipse-build/releases/download/$EMOFLON_RELEASE/$ECLIPSE_ARCHIVE.zip"
 
 set -e
